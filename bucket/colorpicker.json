@@ -1,0 +1,31 @@
+{
+    "version": "2.3.0",
+    "description": "A simple color picker for designers and developers.",
+    "homepage": "https://github.com/Toinane/colorpicker",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Toinane/colorpicker/releases/download/2.3.0/Colorpicker.Portable.2.3.0.zip",
+            "hash": "04f3c30d2e4212902d7ae6f53b6883c76be0fecefe73b04d1f4a8af716f9e559"
+        }
+    },
+    "bin": "Colorpicker.exe",
+    "checkver": {
+        "script": [
+            "$rel = Invoke-RestMethod -Uri 'https://api.github.com/repos/Toinane/colorpicker/releases/latest'",
+            "$version = $rel.tag_name",
+            "$asset = $rel.assets | Where-Object { $_.name -eq \"Colorpicker.Portable.$version.zip\" } | Select-Object -First 1",
+            "$hash = if ($asset) { ($asset.digest -split ':')[-1] } else { '0' * 64 }",
+            "Write-Output \"$version $hash\""
+        ],
+        "regex": "(?<version>\\d+\\.\\d+\\.\\d+)\\s+(?<hash>[a-fA-F0-9]{64})"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Toinane/colorpicker/releases/download/$version/Colorpicker.Portable.$version.zip",
+                "hash": "$matchHash"
+            }
+        }
+    }
+}

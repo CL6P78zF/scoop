@@ -1,0 +1,59 @@
+{
+    "version": "20260703-966d7e4",
+    "description": "Emulator for arcade games and select consoles",
+    "homepage": "https://github.com/finalburnneo/FBNeo",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://github.com/finalburnneo/FBNeo/blob/master/src/license.txt"
+    },
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/finalburnneo/FBNeo/releases/download/latest/windows-x86_32.zip",
+            "hash": "481f9cea053b23b0ddd230b0a52970ba241ab1ebe81d1c7960bf580134cf768c",
+            "bin": ["fbneo.exe"],
+            "shortcuts": [["fbneo.exe", "FinalBurn Neo"]]
+        },
+        "64bit": {
+            "url": "https://github.com/finalburnneo/FBNeo/releases/download/latest/windows-x86_64.zip",
+            "hash": "9a8769f8fcab7d6e88afee7acbbe07d40fa3d0b314b4d656caa96797116a9b1c",
+            "bin": ["fbneo64.exe"],
+            "shortcuts": [["fbneo64.exe", "FinalBurn Neo"]]
+        }
+    },
+    "persist": [
+        "avi",
+        "config",
+        "neocdiso",
+        "recordings",
+        "roms",
+        "savestates",
+        "screenshots",
+        "support"
+    ],
+    "checkver": {
+        "script": [
+            "$rel = Invoke-RestMethod -Uri 'https://api.github.com/repos/finalburnneo/FBNeo/releases/latest'",
+            "$date = $rel.published_at.ToString('yyyyMMdd')",
+            "$commit = $rel.target_commitish.Substring(0,7)",
+            "$version = \"$date-$commit\"",
+            "$x64 = $rel.assets | Where-Object { $_.name -eq 'windows-x86_64.zip' } | Select-Object -First 1",
+            "$x32 = $rel.assets | Where-Object { $_.name -eq 'windows-x86_32.zip' } | Select-Object -First 1",
+            "$x64hash = if ($x64) { ($x64.digest -split ':')[-1] } else { '' }",
+            "$x32hash = if ($x32) { ($x32.digest -split ':')[-1] } else { '' }",
+            "Write-Output \"$version $x64hash $x32hash\""
+        ],
+        "regex": "(?<version>\\d{8}-[a-fA-F0-9]{7})\\s+(?<x64hash>[a-fA-F0-9]{64})\\s+(?<x32hash>[a-fA-F0-9]{64})"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/finalburnneo/FBNeo/releases/download/latest/windows-x86_64.zip",
+                "hash": "$matchX64hash"
+            },
+            "32bit": {
+                "url": "https://github.com/finalburnneo/FBNeo/releases/download/latest/windows-x86_32.zip",
+                "hash": "$matchX32hash"
+            }
+        }
+    }
+}
