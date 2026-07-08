@@ -1,5 +1,5 @@
 {
-    "version": "2026.07.07",
+    "version": "2026.07.08",
     "description": "FFmpeg builds with SVT-AV1 and HDR support (master branch, latest release)",
     "homepage": "https://github.com/QuickFatHedgehog/FFmpeg-Builds-SVT-AV1-HDR",
     "license": "GPL-3.0-or-later",
@@ -10,12 +10,12 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/QuickFatHedgehog/FFmpeg-Builds-SVT-AV1-HDR/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip",
-            "hash": "d250fe6c829c9ad0f02df6e24bb7efa39a4c39cc5e1782f4db683ce1979d2fef",
+            "hash": "b8148d7d10792a6b1cadea8244f8d5f676831005f8bfa46c630522b73c975f3a",
             "extract_dir": "ffmpeg-master-latest-win64-gpl"
         },
         "arm64": {
             "url": "https://github.com/QuickFatHedgehog/FFmpeg-Builds-SVT-AV1-HDR/releases/download/latest/ffmpeg-master-latest-winarm64-gpl.zip",
-            "hash": "b242501c0bf07e0f7a13b7a08301a1238ee27f2e2a91512f520a29cf90fdb476",
+            "hash": "8e465af1812049016a59b72e36f0f83b599fee7a57ff388ea38936d2e0f15960",
             "extract_dir": "ffmpeg-master-latest-winarm64-gpl"
         }
     },
