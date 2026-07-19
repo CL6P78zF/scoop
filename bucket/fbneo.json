@@ -1,5 +1,5 @@
 {
-    "version": "20260719-8d25783",
+    "version": "20260719-89e97cc",
     "description": "Emulator for arcade games and select consoles",
     "homepage": "https://github.com/finalburnneo/FBNeo",
     "license": {
@@ -9,7 +9,7 @@
     "architecture": {
         "32bit": {
             "url": "https://github.com/finalburnneo/FBNeo/releases/download/latest/windows-x86_32.zip",
-            "hash": "0a026f3db275a9d4efd07c0474cdd802c479cced002e2d33e139f947cf5564c7",
+            "hash": "0c4ccec3948f664beaa627cd498a64183514fd1090d0f3489e28815d592f07dc",
             "bin": "fbneo.exe",
             "shortcuts": [
                 [
@@ -20,7 +20,7 @@
         },
         "64bit": {
             "url": "https://github.com/finalburnneo/FBNeo/releases/download/latest/windows-x86_64.zip",
-            "hash": "08fac51bc0316241d2428c4be69126430eaf68852e2ad425803e5a8b2aef7044",
+            "hash": "befa0df7ca176610ce255f3b6ac309eb9c84187101b92232a0d11b20fd8ed4b8",
             "bin": "fbneo64.exe",
             "shortcuts": [
                 [
