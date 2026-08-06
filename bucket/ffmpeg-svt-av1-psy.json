@@ -1,5 +1,5 @@
 {
-    "version": "2026.07.01",
+    "version": "2026.08.05",
     "description": "FFmpeg builds with SVT-AV1-PSY optimizations (master branch, latest release)",
     "homepage": "https://github.com/Uranite/FFmpeg-Builds-SVT-AV1-PSY",
     "license": "GPL-3.0-or-later",
@@ -10,12 +10,12 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/Uranite/FFmpeg-Builds-SVT-AV1-PSY/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip",
-            "hash": "4a2461bcb2f66202bcef91683ebee7cbbe4805d439bf2a998b5badf5d707cfa3",
+            "hash": "a57ff1a59bab6aa6320b8415d92f0e8f23e73162f565afb3a5796dc063053157",
             "extract_dir": "ffmpeg-master-latest-win64-gpl"
         },
         "arm64": {
             "url": "https://github.com/Uranite/FFmpeg-Builds-SVT-AV1-PSY/releases/download/latest/ffmpeg-master-latest-winarm64-gpl.zip",
-            "hash": "4d2c57a187388f8115d4c6e5e6daf2eb0c0855349dc16613666a1b4e94120fb5",
+            "hash": "c96a1cd3f471ab1daeab1681deb9c91966ac96e1eb1c787266ac47b30609a0c5",
             "extract_dir": "ffmpeg-master-latest-winarm64-gpl"
         }
     },
@@ -24,9 +24,18 @@
         "Remove-Item \"$scoopdir\\shims\\ffmpeg.ps1\", \"$scoopdir\\shims\\ffplay.ps1\", \"$scoopdir\\shims\\ffprobe.ps1\" -ErrorAction SilentlyContinue"
     ],
     "bin": [
-        ["bin\\ffmpeg.exe", "ffmpeg-svt-av1-psy"],
-        ["bin\\ffplay.exe", "ffplay-svt-av1-psy"],
-        ["bin\\ffprobe.exe", "ffprobe-svt-av1-psy"]
+        [
+            "bin\\ffmpeg.exe",
+            "ffmpeg-svt-av1-psy"
+        ],
+        [
+            "bin\\ffplay.exe",
+            "ffplay-svt-av1-psy"
+        ],
+        [
+            "bin\\ffprobe.exe",
+            "ffprobe-svt-av1-psy"
+        ]
     ],
     "checkver": {
         "script": [
