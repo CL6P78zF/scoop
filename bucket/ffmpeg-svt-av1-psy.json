@@ -1,5 +1,5 @@
 {
-    "version": "2026.08.12",
+    "version": "2026.08.13",
     "description": "FFmpeg builds with SVT-AV1-PSY optimizations (master branch, latest release)",
     "homepage": "https://github.com/Uranite/FFmpeg-Builds-SVT-AV1-PSY",
     "license": "GPL-3.0-or-later",
@@ -10,12 +10,12 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/Uranite/FFmpeg-Builds-SVT-AV1-PSY/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip",
-            "hash": "d4f6c0cf9edfb7964718bc4aa6db1fd44f6a58156f5544fb63191cb36c105b05",
+            "hash": "1c74b654b6efb32a5668ac9766dd364ffaa8c4ed8e6bd087d93669e5f907c2f4",
             "extract_dir": "ffmpeg-master-latest-win64-gpl"
         },
         "arm64": {
             "url": "https://github.com/Uranite/FFmpeg-Builds-SVT-AV1-PSY/releases/download/latest/ffmpeg-master-latest-winarm64-gpl.zip",
-            "hash": "d2dcc9aeab082458fb9217e0e74e60255f5fcec1ffef5949495856c4bbfbaf98",
+            "hash": "b13303494b6e355bbac6eb146579e0a0aea1e498f5eca018e1af90bbb47046b3",
             "extract_dir": "ffmpeg-master-latest-winarm64-gpl"
         }
     },
